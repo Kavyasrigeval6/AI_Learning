@@ -1,0 +1,637 @@
+{
+  "info": {
+    "_postman_id": "bdb00e1e-db77-4aeb-9029-ef5023473d8c",
+    "name": "API_Practice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60373707",
+    "_collection_link": "https://go.postman.co/collection/60373707-bdb00e1e-db77-4aeb-9029-ef5023473d8c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});"
+            ]
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "followRedirects": true,
+        "maxResponseSize": 52428800,
+        "protocolVersion": "auto",
+        "strictSSL": false
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "r = requests.get('https://api.github.com/user', auth=('user', 'pass'))\r\nr.status_code\r\n200\r\nr.headers['content-type']\r\n'application/json; charset=utf8'\r\nr.encoding\r\n'utf-8'\r\nr.text\r\n'{\"type\":\"User\"...'\r\nr.json()\r\n{'private_gists': 419, 'total_private_repos': 77, ...}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": [
+        {
+          "name": "Get data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "r = requests.get('https://api.github.com/user', auth=('user', 'pass'))\r\nr.status_code\r\n200\r\nr.headers['content-type']\r\n'application/json; charset=utf8'\r\nr.encoding\r\n'utf-8'\r\nr.text\r\n'{\"type\":\"User\"...'\r\nr.json()\r\n{'private_gists': 419, 'total_private_repos': 77, ...}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 10:15:12 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=43200"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU\""
+            },
+            {
+              "key": "expires",
+              "value": "-1"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-ratelimit-limit",
+              "value": "3600000"
+            },
+            {
+              "key": "x-ratelimit-remaining",
+              "value": "3599999"
+            },
+            {
+              "key": "x-ratelimit-reset",
+              "value": "1795376765"
+            },
+            {
+              "key": "Age",
+              "value": "5021"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "HIT"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7Y%2FVCmvLfwL7MS6dc3VyYKBZr4tpbTjE9PaEBTeClSqYHWELyMfw7b%2BeaLZRHVl0m7EcJdko7JzIEgWsEEBMxOjk5ec4IG0wjdOYuNbAhw8ecQE%2BeW1fPk9jClwBoavqEPcpAHcXuoNU2VGSRSH%2F\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a5f7a6adc95ec8a1-IAD"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "https://jsonplaceholder.typicode.com/posts/1",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts?user Id=2&id=12",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "user Id",
+              "value": "2"
+            },
+            {
+              "key": "id",
+              "value": "12"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "New Request",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts?user Id=2&id=12",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "user Id",
+                  "value": "2"
+                },
+                {
+                  "key": "id",
+                  "value": "12"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 10:15:00 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=43200"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"10a-3jpj88XVd+UQtAiXlhAOL7TRyeI\""
+            },
+            {
+              "key": "expires",
+              "value": "-1"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-ratelimit-limit",
+              "value": "3600000"
+            },
+            {
+              "key": "x-ratelimit-remaining",
+              "value": "3599995"
+            },
+            {
+              "key": "x-ratelimit-reset",
+              "value": "1795515561"
+            },
+            {
+              "key": "Age",
+              "value": "1115"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "HIT"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7nQa3PBXhlbDcCZpQ789yC15t7afwexmHVv871CKJH3NEr1CdAKR3cQAOW%2FwTTTtV6GhXya1X%2FJnIOWMsU8MNuMrEYl16OLwvA1HdBOgMiQ1p8dKqn11R%2BrBq%2BzL9Mg%2B3yNih2iLjQ%2F4zGQHZHo6\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a5f7a664fb34ea42-IAD"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"userId\": 2,\n    \"id\": 12,\n    \"title\": \"in quibusdam tempore odit est dolorem\",\n    \"body\": \"itaque id aut magnam\\npraesentium quia et ea odit et ea voluptas et\\nsapiente quia nihil amet occaecati quia id voluptatem\\nincidunt ea est distinctio odio\"\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"name\": \"Kavya\",\r\n    \"Company\": \"G6 Technology Services\",\r\n    \"Position\": \"Software Engineer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "postman-echo.com/post",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "post"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "New Request",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"name\": \"Kavya\",\r\n    \"Company\": \"G6 Technology Services\",\r\n    \"Position\": \"Software Engineer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "postman-echo.com/post",
+              "host": [
+                "postman-echo",
+                "com"
+              ],
+              "path": [
+                "post"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Tue, 24 Nov 2026 10:12:36 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"214-5prE5O4wawSkantDWyOg2hQ7rCk\""
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-envoy-upstream-service-time",
+              "value": "941"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "set-cookie",
+              "value": "sails.sid=s%3A9OU8V3hHwpMmUYgQEzdhE38OjRKITYcU.RSShWQxc3Ajz1DeBV1gB0gbgeRHzXvCzQ6okRZCqgdA; Path=/; HttpOnly"
+            },
+            {
+              "key": "set-cookie",
+              "value": "__cf_bm=vTgmk.xwKa7aaiye.lEvYZ4V4IRkQcCggW_7N.CEFzQ-1795515155.1532602-1.0.1.1-ARUsSo9Ta.j9.OIgHehds812FfkqvDbddhY7BDuCzO1wUeNpgsVWPJ5QIT.soKYJw89ziIybJuPy6KjYDoVSmeuE.imZe32IiIbtSkoN8XbIo.5yoh_SQ0Qxn2AtyFG9; HttpOnly; Path=/; Domain=postman-echo.com; Expires=Tue, 24 Nov 2026 10:42:36 GMT"
+            },
+            {
+              "key": "set-cookie",
+              "value": "_cfuvid=.0k3jQQ5YvXRMPk9ammVkoumWCPqJjstbuukyQ.Yut4-1795515155.1532602-1.0.1.1-Mrurcce7d7tflVqMEsPkcxiuxzFet6h.3SFnDCZiV9c; HttpOnly; SameSite=None; Secure; Path=/; Domain=postman-echo.com"
+            },
+            {
+              "key": "content-encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "server",
+              "value": "envoy"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a5f7a2d7bbbe0736-IAD"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"args\": {},\n  \"data\": {\n    \"name\": \"Kavya\",\n    \"Company\": \"G6 Technology Services\",\n    \"Position\": \"Software Engineer\"\n  },\n  \"files\": {},\n  \"form\": {},\n  \"headers\": {\n    \"host\": \"postman-echo.com\",\n    \"content-length\": \"102\",\n    \"x-forwarded-proto\": \"https\",\n    \"cache-control\": \"no-cache\",\n    \"postman-token\": \"af173974-3b63-4008-8447-d764896d2632\",\n    \"content-type\": \"application/json\",\n    \"user-agent\": \"PostmanRuntime/2.17.1\",\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip\"\n  },\n  \"json\": {\n    \"name\": \"Kavya\",\n    \"Company\": \"G6 Technology Services\",\n    \"Position\": \"Software Engineer\"\n  },\n  \"url\": \"https://postman-echo.com/post\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user id\":1,\r\n        \"username\":\"John\",\r\n        \"title\": \"Learning Python API\",\r\n         \"body\": \"I am practising PUT method using Python requests.\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "New Request",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user id\":1,\r\n        \"username\":\"John\",\r\n        \"title\": \"Learning Python API\",\r\n         \"body\": \"I am practising PUT method using Python requests.\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 10:14:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"94-0lFYJBzJ0ImqBK+mf6ByKC2gBJQ\""
+            },
+            {
+              "key": "expires",
+              "value": "-1"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-ratelimit-limit",
+              "value": "3600000"
+            },
+            {
+              "key": "x-ratelimit-remaining",
+              "value": "3599993"
+            },
+            {
+              "key": "x-ratelimit-reset",
+              "value": "1795515561"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eBfUsswp3iH4%2FAmjw9d2CUbDsfqNqntig04cNws4Di5z4itFWB5psS5O6QkRLQJR3Ny0xsK9WPVH9xQY7%2F1A64xnAsE%2Bl0h1%2BCAm8ln4zlB5T%2F3zLKx8a9nGTlZdmUvr4tcFl6tQ%2BagJLLQk9UTc\"}]}"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a5f7a6252927d701-IAD"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"user id\": 1,\n  \"username\": \"John\",\n  \"title\": \"Learning Python API\",\n  \"body\": \"I am practising PUT method using Python requests.\",\n  \"id\": 1\n}"
+        }
+      ]
+    }
+  ]
+}
