@@ -17,13 +17,10 @@ def disp_user(response:Response):
    return users
 
 @app.post("/users",status_code=201)
-def add_user(user:Users):
-    users.append(user)
+def add_user(user:list[Users]):
+    for u in user:
+        users.append(u)
     return user
-
-@app.get("/users")
-def get_user():
-     return users
 
 @app.get("/users/{id}",response_model=Users)
 def respond_user(id:int):
